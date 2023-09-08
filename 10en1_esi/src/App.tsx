@@ -29,7 +29,7 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path="/home">
-          <Home />hh
+          <Home />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />
