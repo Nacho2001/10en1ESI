@@ -1,15 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 //import { OrbitControls } from 'three/addons/libs/three.module.js';
-
+// Ver @types/three
 export const Escena: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     useEffect(() => {
         if (!canvasRef.current) return;
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/2 / window.innerHeight/2, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({canvas: canvasRef.current});
-        renderer.setSize(window.innerWidth, window.innerHeight)
+        renderer.setSize(window.innerWidth/2, window.innerHeight/2)
 
         scene.background = new THREE.Color(0x0000ff)
 
