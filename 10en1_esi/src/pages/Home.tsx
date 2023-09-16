@@ -2,6 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import ExploreContainer from '../components/ExploreContainer';
 import PanelSimple from '../components/Objetos3d/panelSinmple';
 import './Home.css';
+import { Escena } from '../components/Objetos3d/Escena';
 
 const Home: React.FC = () => {
   return (
@@ -17,7 +18,9 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <div id="screen"></div>
+        <div id="screen">
+          <Escena/>
+        </div>
       </IonContent>
     </IonPage>
   );
