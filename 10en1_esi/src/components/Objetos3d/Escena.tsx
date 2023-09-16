@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 //import { OrbitControls } from 'three/addons/libs/three.module.js';
-// Ver @types/three
+// Ver @types/threea
 export const Escena: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     useEffect(() => {
