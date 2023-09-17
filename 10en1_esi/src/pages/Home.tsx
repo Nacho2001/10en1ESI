@@ -1,6 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import PanelSimple from '../components/Objetos3d/panelSinmple';
 import './Home.css';
 import {Escena} from '../components/Objetos3d/Escena';
 
