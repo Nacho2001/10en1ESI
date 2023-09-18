@@ -46,7 +46,7 @@ export const Escena: React.FC = () => {
 
         const enfoque = () => {
             // Modifica el valor de longitud para hacer "girar" la camara, es decir la hace cambiar el enfoque
-            longitud += 0.1;
+            longitud += 0.02;
             // Convierte el angulo de enfoque de grados a radianes (angulo de camara 90°)
             let phi:number = THREE.MathUtils.degToRad(90 - latitud);
             // Canvierte a radianes el valor de longitud
