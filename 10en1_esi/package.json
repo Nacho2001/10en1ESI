@@ -27,6 +27,7 @@
     "react-dom": "^18.2.0",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
+    "three-bmfont-text": "^3.0.1",
     "three.js": "^0.77.1"
   },
   "devDependencies": {
