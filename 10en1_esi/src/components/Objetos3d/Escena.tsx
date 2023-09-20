@@ -16,7 +16,7 @@ export const Escena: React.FC = () => {
         const escena = new THREE.Scene()
         // Crea instancia de una camara de perspectiva (campo de vision 50°, resolucion de la camara con tamaño del elemento, distancia con el punto mas cercano [near] y distancia con el punto más lejano [far])
         const camara = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1,1100);
-        const box = panel(50,50,50,"0x0000ff");
+        const box = panel(50,50,50,"0x00ff00");
         escena.add(box)
         // Crea la esfera que será el fondo de la escena
         const campoVision = new THREE.SphereGeometry(500,60,40);
@@ -60,6 +60,7 @@ export const Escena: React.FC = () => {
             const z:number = 500 * Math.sin(phi) * Math.sin(theta);
             // Luego, camibia el punto de vista de la camara en base a los calculos de los ejes
             camara.lookAt(x,y,z);
+            box.rotation.set(0,0.22,0)
             box.position.set(x,y,z);
             // Al final, aplica la camara a la escena
             renderizador.render(escena,camara);
