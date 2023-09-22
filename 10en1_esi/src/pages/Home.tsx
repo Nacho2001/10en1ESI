@@ -1,7 +1,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
-import {Escena} from '../components/Objetos3d/Escena';
+import {EscenaFondo} from '../components/3D/EscenaFondo';
+import {EscenaFrente} from '../components/3D/EscenaFrente';
 
 const Home: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <div id="screen">
-          <Escena/>
+          <EscenaFondo/>
         </div>
       </IonContent>
     </IonPage>
