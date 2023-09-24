@@ -3,7 +3,6 @@ import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 import {EscenaFondo} from '../components/3D/EscenaFondo';
 import {EscenaFrente} from '../components/3D/EscenaFrente';
-
 const Home: React.FC = () => {
   return (
     <IonPage>
@@ -20,6 +19,7 @@ const Home: React.FC = () => {
         </IonHeader>
         <div id="screen">
           <EscenaFondo/>
+          <EscenaFrente/>
         </div>
       </IonContent>
     </IonPage>

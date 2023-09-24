@@ -1,7 +1,6 @@
 import React, {useEffect, useRef} from "react";
 import * as THREE from 'three';
 import aulaFondo from './texturas/aula2.jpg';
-import { panel } from "./panelBase";
 export const Escena: React.FC = () => {
     // Referencia al elemento canvas que alojará la escena
     const refCanvas = useRef<HTMLCanvasElement | null>(null)
@@ -16,8 +15,6 @@ export const Escena: React.FC = () => {
         const escena = new THREE.Scene()
         // Crea instancia de una camara de perspectiva (campo de vision 50°, resolucion de la camara con tamaño del elemento, distancia con el punto mas cercano [near] y distancia con el punto más lejano [far])
         const camara = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1,1100);
-        const box = panel(8,80,80,"#ff0000","hola");
-        escena.add(box)
         // Crea la esfera que será el fondo de la escena
         const campoVision = new THREE.SphereGeometry(500,60,40);
         // Define dimensión de la esfera
