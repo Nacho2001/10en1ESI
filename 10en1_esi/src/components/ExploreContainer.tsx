@@ -1,13 +1,43 @@
+import React from "react";
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from "@ionic/react";
+import { useAuth } from "../context/authContext";
 import './ExploreContainer.css';
 
-interface ContainerProps { }
+//interface ContainerProps { }
+interface HomeProps {
+  // Define prop types if any
+}
 
-const ExploreContainer: React.FC<ContainerProps> = () => {
+const ExploreContainer: React.FC<HomeProps> = (props: HomeProps) => {
+  const { user, logout, loading } = useAuth();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <div id="container">
-      <strong>Ready to create an app?</strong>
-      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    </div>
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Welcome</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">
+        {loading ? (
+          <h1>Loading</h1>
+        ) : (
+          <>
+            <img src={user?.photoURL || ''} />
+            <div>Welcome {user?.displayName || user?.email}</div>
+            <IonButton onClick={handleLogout}>Logout</IonButton>
+          </>
+        )}
+      </IonContent>
+    </IonPage>
   );
 };
 
