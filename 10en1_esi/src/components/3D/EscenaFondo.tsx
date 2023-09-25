@@ -14,7 +14,7 @@ export const EscenaFondo: React.FC = () => {
         // Crea instancia de escena de three
         const escena = new THREE.Scene()
         // Crea instancia de una camara de perspectiva (campo de vision 50°, resolucion de la camara con tamaño del elemento, distancia con el punto mas cercano [near] y distancia con el punto más lejano [far])
-        const camara = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1,1100);
+        const camara = new THREE.PerspectiveCamera(50, window.innerWidth/2 / window.innerHeight, 1,1100);
         // Renderizador escena fondo
         const renderizador = new THREE.WebGLRenderer({canvas: refCanvas.current});
         renderizador.setPixelRatio(window.devicePixelRatio);

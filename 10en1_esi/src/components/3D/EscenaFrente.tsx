@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from "react"
 import * as THREE from 'three';
-import {panel} from './objetosBase/panelBase';
+import { boton } from "./flotantes/boton";
 import "./escenas.css";
 export const EscenaFrente: React.FC = () => {
     const refCanvas = useRef<HTMLCanvasElement | null>(null);
@@ -9,27 +9,23 @@ export const EscenaFrente: React.FC = () => {
         //Crea una escena nueva
         const escenaFr = new THREE.Scene();
         // Crea una camara de perspectiva
-        const camaraFr = new THREE.PerspectiveCamera(75, window.innerWidth/2 / window.innerHeight/2, 0.1, 1000)
+        const camaraFr = new THREE.PerspectiveCamera(75, 300 / 300, 0.1, 1000)
         // Instancia el renderizador
         const renderizadorFr = new THREE.WebGLRenderer({ canvas: refCanvas.current, alpha: true });
         escenaFr.background = null;
-        renderizadorFr.setSize(window.innerWidth/2, window.innerHeight/2)
+        renderizadorFr.setSize(300, 300)
         camaraFr.position.z = 5
-        // Crea un objeto tipo "box", con las dimensiones de un rectangulo
-        const box = panel(1,2,1,"#00ff00");
-        escenaFr.add(box)
-        const animar = () => {
+        const botonPush = boton(-0.4,2,1.0,"hola","#ff0000")
+        //const botonPush2 = boton(0.4,2,1.0,"hola","#ff0000")
+        escenaFr.add(botonPush)
+        //animar()
+        function animar(){
             requestAnimationFrame(animar);
-            // Rotación del cubo
-            if (box) {
-                box.rotation.x += 0.01;
-                box.rotation.y += 0.01;
-            }
+            botonPush.rotation.y += 0.009
             renderizadorFr.render(escenaFr,camaraFr)
         }
-        //animar();
         renderizadorFr.render(escenaFr,camaraFr)
-    })
+    }, [])
     return (
         <>
             <canvas ref={refCanvas} className="canvasFrente"></canvas>
