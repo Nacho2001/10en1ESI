@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from "react"
 import * as THREE from 'three';
 import { boton } from "./flotantes/boton";
+import { Boton } from "./flotantes/boton2";
 import "./escenas.css";
 export const EscenaFrente: React.FC = () => {
     const refCanvas = useRef<HTMLCanvasElement | null>(null);
@@ -15,13 +16,14 @@ export const EscenaFrente: React.FC = () => {
         escenaFr.background = null;
         renderizadorFr.setSize(300, 300)
         camaraFr.position.z = 5
-        const botonPush = boton(-0.4,2,1.0,"hola","#ff0000")
+        //const botonPush = boton(-0.4,2,1.0,"hola","#ff0000")
         //const botonPush2 = boton(0.4,2,1.0,"hola","#ff0000")
-        escenaFr.add(botonPush)
+        const miBoton = new Boton(2,1,"#00ff00","hola").crearTabla();
+        escenaFr.add(miBoton)
         //animar()
         function animar(){
             requestAnimationFrame(animar);
-            botonPush.rotation.y += 0.009
+            miBoton.rotation.y += 0.009
             renderizadorFr.render(escenaFr,camaraFr)
         }
         renderizadorFr.render(escenaFr,camaraFr)
