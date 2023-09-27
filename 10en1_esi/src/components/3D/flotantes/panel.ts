@@ -1,10 +1,15 @@
-import { panel } from '../objetosBase/panelBase';
-import {createText} from 'three/examples/jsm/webxr/Text2D';
-export const paneljuego = (ancho:number,largo:number,texto:string,color:string) => {
-    const panelJuego = panel(ancho,largo,0.1,color);
-    const textoPanel = createText(texto, 0.6);
-    panelJuego.add(textoPanel)
-    textoPanel.position.set(0,0,0.06)
-    panelJuego.position.set(0,0,0);
-    return panelJuego
+import * as THREE from 'three';
+import { Objeto3d } from '../objetosBase/panelBase2';
+
+export class Panel extends Objeto3d{
+    constructor(color:string){
+        super(8,5,0.1,color)
+    }
+    panel(x:number, y:number){
+        // Primero, crea el objeto tipo cubo con crearTabla
+        const panelCentral = this.crearTabla();
+        panelCentral.position.set(x,y,-0.5);
+        // Retorna el boton con texto incluido
+        return panelCentral;
+    }
 }

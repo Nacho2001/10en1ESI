@@ -5,9 +5,9 @@ export function escena_frontal(renderizador:THREE.WebGLRenderer){
     //Crea una escena nueva
     const escenaFr = new THREE.Scene();
     // Crea una camara de perspectiva
-    const camaraFr = new THREE.PerspectiveCamera(75, window.innerWidth/2 / window.innerHeight/2, 0.1, 1000)
+    const camaraFr = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
     escenaFr.background = null;
-    renderizador.setSize(window.innerWidth/2, window.innerHeight/2)
+    renderizador.setSize(window.innerWidth, window.innerHeight)
     camaraFr.position.z = 5
     // Crea un objeto tipo "box", con las dimensiones de un rectangulo
     const box = panel(1,2,1,"0x00ff00");

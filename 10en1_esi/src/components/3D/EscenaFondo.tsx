@@ -14,12 +14,12 @@ export const EscenaFondo: React.FC = () => {
         // Crea instancia de escena de three
         const escena = new THREE.Scene()
         // Crea instancia de una camara de perspectiva (campo de vision 50°, resolucion de la camara con tamaño del elemento, distancia con el punto mas cercano [near] y distancia con el punto más lejano [far])
-        const camara = new THREE.PerspectiveCamera(50, window.innerWidth/2 / window.innerHeight, 1,1100);
+        const camara = new THREE.PerspectiveCamera(50, 800 / 600, 1,1100);
         // Renderizador escena fondo
         const renderizador = new THREE.WebGLRenderer({canvas: refCanvas.current});
         renderizador.setPixelRatio(window.devicePixelRatio);
         // Define resolución del elemento canvas
-        renderizador.setSize(window.innerWidth/2, window.innerHeight/2);
+        renderizador.setSize(1000, 600);
         // Crea la esfera que será el fondo de la escena
         const campoVision = new THREE.SphereGeometry(500,60,40);
         // Define dimensión de la esfera
@@ -39,7 +39,7 @@ export const EscenaFondo: React.FC = () => {
             // Genera el bucle de la animación
             requestAnimationFrame(animacion);
             // Invoca funcón de enfoque de la camara
-            //enfoque();
+            enfoque();
             // Al final, aplica la camara a la escena
             renderizador.render(escena,camara);
         }

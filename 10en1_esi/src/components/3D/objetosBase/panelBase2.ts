@@ -17,6 +17,7 @@ export class Objeto3d{ //Declara los parametros para definir las dimensiones y c
     crearTabla(){ // crear tabla se refiere a crear un objeto tipo cubo o box
         // Crea una instancia de la clase BoxGeometry para crear el cubo
         const figura = new THREE.BoxGeometry(this.x,this.y,this.z);
+
         // Invoca la clase MeshBasicMaterial para darle color al objeto con textura simple
         const material = new THREE.MeshBasicMaterial({color: this.color})
         // Asigna el color y textura a la figura
