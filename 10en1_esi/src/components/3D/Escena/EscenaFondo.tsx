@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from "react";
 import * as THREE from 'three';
-import aulaFondo from './texturas/aula2.jpg';
+import aulaFondo from '../texturas/aula2.jpg';
 import "./escenas.css";
 export const EscenaFondo: React.FC = () => {
     // Referencia al elemento canvas que alojará la escena

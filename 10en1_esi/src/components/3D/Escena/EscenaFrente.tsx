@@ -1,8 +1,10 @@
 import React, {useEffect, useRef} from "react"
 import * as THREE from 'three';
-import { Boton } from "./flotantes/boton";
-import { Panel } from "./flotantes/panel";
+import { Boton } from "../flotantes/boton";
+import { panelCentral2 }from "../flotantes/panel";
 import "./escenas.css";
+import "../flotantes/reloj"
+import temporizador from "../flotantes/reloj";
 export const EscenaFrente: React.FC = () => {
     const refCanvas = useRef<HTMLCanvasElement | null>(null);
     useEffect(() => {
@@ -18,8 +20,9 @@ export const EscenaFrente: React.FC = () => {
         camaraFr.position.z = 5
         const miBoton = new Boton("#f26969","que hago?").boton(-1.9,-2.7);
         const miBoton2 = new Boton("#f26969","hola").boton(1.9,-2.7);
-        const panelCentral = new Panel("#f26969").panel(0.1,1);
-        escenaFr.add(miBoton,miBoton2,panelCentral);
+        const panelCentral = panelCentral2("#f26969","#0000ff");
+        const cirtulo = temporizador("#00ff00","#ffffff")
+        escenaFr.add(miBoton,miBoton2,panelCentral, cirtulo);
         //animar()
         function animar(){
             requestAnimationFrame(animar);
