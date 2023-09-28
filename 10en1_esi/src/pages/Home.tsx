@@ -1,8 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
-import {EscenaFondo} from '../components/3D/Escena/EscenaFondo';
-import {EscenaFrente} from '../components/3D/Escena/EscenaFrente';
 import { EscenaCompleta } from '../components/3D/Escena/EscenaCompleta';
 const Home: React.FC = () => {
   return (
@@ -18,7 +16,7 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <div id="screen" style={{"alignItems":"center"}}>
+        <div id="screen">
           <EscenaCompleta/>
         </div>
       </IonContent>

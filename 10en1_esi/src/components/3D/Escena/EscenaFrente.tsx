@@ -23,12 +23,6 @@ export const EscenaFrente: React.FC = () => {
         const panelCentral = panelCentral2("#f26969","#0000ff");
         const cirtulo = temporizador("#00ff00","#ffffff")
         escenaFr.add(miBoton,miBoton2,panelCentral, cirtulo);
-        //animar()
-        function animar(){
-            requestAnimationFrame(animar);
-            miBoton.rotation.y += 0.009
-            renderizadorFr.render(escenaFr,camaraFr)
-        }
         renderizadorFr.render(escenaFr,camaraFr)
     }, [])
     return (

@@ -19,6 +19,7 @@ export class Boton extends Objeto3d{
         const miBoton = this.tabla(2.5,0.7,0.1);
         // Crea el objeto con el texto en 2d, require el texto a ingresar y el tamaño de la fuente
         const textoBoton = createText(this.texto, 0.3);
+        //const textoBoton = this.buttonText(this.texto)
         // Añade el texto al boton
         miBoton.add(textoBoton);
         miBoton.position.set(x,y,-0.5);
@@ -27,4 +28,10 @@ export class Boton extends Objeto3d{
         // Retorna el boton con texto incluido
         return miBoton;
     };
+    buttonText(text:string){
+        const fullText = document.createElement("canvas");
+        fullText.setAttribute("id","rta");
+        fullText.innerText = text
+        return fullText;
+    }
 }
