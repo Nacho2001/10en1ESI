@@ -33,9 +33,9 @@ export const EscenaFrente: React.FC = () => {
         const miBoton = new Boton("#f26969","quiero sal!").boton(-1.9,-2.7);
         const miBoton2 = new Boton("#f26969","hola").boton(1.9,-2.7);
         // Panel de prueba
-        const panelCentral = panelCentral2("#f26969","#0000ff");
+        const panelCentral = panelCentral2("#026969","#0000ff");
         // reloj de prueba
-        const cirtulo = temporizador("#00ff00","#ffffff")
+        const cirtulo = temporizador("#00ff00")
         // Añade los elementos creados a la escena
         escenaFr.add(miBoton,miBoton2,panelCentral, cirtulo);
         // Por ultimo, se envia la escena y la camara al renderizador
