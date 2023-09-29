@@ -1,10 +1,13 @@
 .canvasFondo{
+    /*Posicion de la escena: superior izquierda*/
     position:relative;
+    /* Que utilice el tamaño completo del elemento padre*/
     height:100%;
     width:100%;
 }
 
 .canvasFrente{
+    /*Inidice eje z, permite que la escena se muestre sobre otro elemento*/
     z-index:2;
     position:absolute;
     left:0

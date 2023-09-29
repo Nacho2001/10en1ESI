@@ -1,7 +1,13 @@
+// Importa React y los hooks necesarios
 import React, {useEffect, useRef} from "react";
+// Importa la libreria three.js
 import * as THREE from 'three';
+// Obtiene la imagen que se utilizará como fondo de escena
 import aulaFondo from '../texturas/aula2.jpg';
+// Utiliza la hoja de estilo escenas.css
 import "./escenas.css";
+
+// Funcion que retorna el componente
 export const EscenaFondo: React.FC = () => {
     // Referencia al elemento canvas que alojará la escena
     const refCanvas = useRef<HTMLCanvasElement | null>(null)
@@ -13,13 +19,13 @@ export const EscenaFondo: React.FC = () => {
         if(!refCanvas.current){return;}
         // Crea instancia de escena de three
         const escena = new THREE.Scene()
-        // Crea instancia de una camara de perspectiva (campo de vision 50°, resolucion de la camara con tamaño del elemento, distancia con el punto mas cercano [near] y distancia con el punto más lejano [far])
+        // Crea instancia de una camara de perspectiva (campo de vision 50°, resolucion de la camara 800x600, distancia con el punto mas cercano [near] y distancia con el punto más lejano [far])
         const camara = new THREE.PerspectiveCamera(50, 800 / 600, 1,1100);
         // Renderizador escena fondo
         const renderizador = new THREE.WebGLRenderer({canvas: refCanvas.current});
         renderizador.setPixelRatio(window.devicePixelRatio);
-        // Define resolución del elemento canvas
-        renderizador.setSize(1000, 600);
+        // Define resolución del elemento canvas (800x600)
+        renderizador.setSize(800, 600);
         // Crea la esfera que será el fondo de la escena
         const campoVision = new THREE.SphereGeometry(500,60,40);
         // Define dimensión de la esfera
